@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hearth & Hustle | Simple technology and AI tools for home and business</title>
+<meta name="description" content="Hearth & Hustle helps busy families and small businesses get time back with simple technology and AI tools: personalized consultations, in-person workshops, team training, and online workshops.">
+<meta property="og:title" content="Hearth & Hustle">
+<meta property="og:description" content="Simple technology and AI tools for home and business. Get your time back.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thehearthandhustle.com/">
+<meta property="og:image" content="https://thehearthandhustle.com/images/sample-dashboard.jpg">
+<link rel="icon" type="image/png" href="images/hh-crest-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Hearth & Hustle brand: cream and blush grounds, deep-plum feature blocks,
+   gold hairlines, Cormorant Garamond headings with one italic plum word, Jost body. */
+:root{
+  --cream:#FBF6F3; --blush:#F4E7E3; --ink:#3A2A30; --ink-2:#5A4249; --muted:#7A5E66;
+  --rule:#E7D8D2; --rule-strong:#D9C3BB; --accent:#8E4A5A; --plum-deep:#4A2E3A;
+  --on-deep:#F6ECE8; --on-deep-soft:#E8C9C2; --gold:#B89B6E;
+  --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'Jost', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+  --wrap:1160px;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; background:var(--cream); color:var(--ink-2); font-family:var(--font-body);
+  font-weight:300; font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+img{ max-width:100%; display:block; }
+a{ color:var(--accent); }
+.wrap{ max-width:var(--wrap); margin:0 auto; padding:0 24px; }
+h1,h2,h3{ font-family:var(--font-display); font-weight:500; color:var(--ink); margin:0; line-height:1.08; }
+h1 em,h2 em,h3 em{ font-style:italic; color:var(--accent); }
+.eyebrow{ font-size:13px; font-weight:400; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+.rule{ width:72px; height:1px; background:var(--gold); margin:26px 0; border:0; }
+.btn{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:400;
+  font-size:14px; letter-spacing:3px; text-transform:uppercase; padding:16px 30px; border-radius:2px; transition:background .2s; }
+.btn:hover{ background:var(--plum-deep); }
+.btn.ghost{ background:transparent; color:var(--ink); border:1px solid var(--gold); }
+.btn.ghost:hover{ background:var(--blush); }
+section{ padding:96px 0; }
+.section-head{ max-width:680px; margin-bottom:48px; }
+.section-head h2{ font-size:clamp(36px,5vw,54px); }
+.section-head p{ margin:18px 0 0; }
+
+/* header */
+header{ position:sticky; top:0; z-index:10; background:rgba(251,246,243,.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+.nav{ display:flex; align-items:center; justify-content:space-between; height:76px; }
+.brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink);
+  font-family:var(--font-display); font-weight:600; font-size:26px; }
+.brand img{ width:48px; height:48px; }
+.brand .amp{ font-style:italic; color:var(--accent); }
+.nav-links{ display:flex; align-items:center; gap:32px; }
+.nav-links a{ text-decoration:none; color:var(--ink-2); font-size:13px; letter-spacing:3px; text-transform:uppercase; font-weight:400; }
+.nav-links a:hover{ color:var(--accent); }
+.nav-links .btn{ color:#fff; padding:12px 22px; }
+
+/* hero */
+.hero{ padding:88px 0 96px; }
+.hero-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:64px; align-items:center; }
+.hero h1{ font-size:clamp(44px,7vw,84px); letter-spacing:-.5px; }
+.hero .lead{ font-size:20px; max-width:560px; margin:0 0 34px; }
+.hero .actions{ display:flex; flex-wrap:wrap; gap:14px; }
+.hero-art{ position:relative; }
+.hero-art .frame{ border:1px solid var(--gold); border-radius:220px 220px 6px 6px; padding:14px; }
+.hero-art .frame-inner{ border-radius:208px 208px 2px 2px; overflow:hidden; background:var(--plum-deep);
+  aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; }
+.hero-art .frame-inner img{ width:62%; height:auto; }
+.hero-art .frame-inner .fallback{ font-family:var(--font-display); color:var(--on-deep); font-size:64px; font-weight:500; }
+.hero-art .frame-inner .fallback em{ color:var(--gold); }
+.hero-tag{ position:absolute; left:-24px; bottom:48px; background:var(--cream); border:1px solid var(--rule-strong);
+  padding:16px 22px; max-width:250px; font-size:15px; line-height:1.45; box-shadow:0 10px 30px rgba(74,46,58,.08); }
+.hero-tag b{ display:block; font-family:var(--font-display); font-style:italic; font-weight:600; font-size:22px; color:var(--accent); }
+
+/* pillars band */
+.band{ background:var(--plum-deep); color:var(--on-deep-soft); padding:40px 0; }
+.band-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+.band h3{ color:var(--on-deep); font-size:28px; margin-bottom:6px; }
+.band h3 em{ color:var(--gold); }
+.band p{ margin:0; font-size:16px; }
+
+/* services */
+.services{ background:var(--cream); }
+.svc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.svc{ background:var(--blush); padding:40px; border-radius:2px; display:flex; flex-direction:column; }
+.svc .n{ font-family:var(--font-display); font-style:italic; font-size:40px; color:var(--accent); line-height:1; }
+.svc h3{ font-size:34px; margin:14px 0 12px; }
+.svc p{ margin:0; }
+.svc.feature{ background:var(--plum-deep); color:var(--on-deep-soft); }
+.svc.feature h3{ color:var(--on-deep); }
+.svc.feature .n{ color:var(--gold); }
+.svc.feature .btn{ align-self:flex-start; margin-top:26px; background:var(--gold); color:var(--plum-deep); }
+.svc.feature .btn:hover{ background:var(--on-deep); }
+.badge{ display:inline-block; align-self:flex-start; font-size:12px; letter-spacing:3px; text-transform:uppercase; font-weight:500;
+  color:var(--accent); border:1px solid var(--accent); padding:4px 10px; border-radius:2px; margin-left:12px; vertical-align:middle; }
+.svc-head{ display:flex; align-items:center; }
+.waitlist{ margin-top:22px; border-top:1px solid var(--rule-strong); padding-top:10px; }
+.waitlist p.small{ font-size:15px; color:var(--muted); margin:8px 0 0; }
+
+/* how it works */
+.how{ background:var(--blush); }
+.steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
+.step .sn{ font-family:var(--font-display); font-style:italic; font-size:88px; line-height:.85; color:var(--accent); }
+.step .srule{ width:56px; height:1px; background:var(--gold); margin:22px 0; }
+.step h3{ font-size:30px; margin-bottom:10px; }
+.step p{ margin:0; }
+
+/* samples */
+.samples .shot{ border:1px solid var(--rule-strong); background:#fff; padding:10px; border-radius:2px; box-shadow:0 18px 40px rgba(74,46,58,.08); }
+.samples figure{ margin:0; }
+.samples figcaption{ font-size:14px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-top:14px; }
+.slides{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:72px; }
+.dash{ display:grid; grid-template-columns:3fr 1fr; gap:24px; align-items:end; }
+.sample-note{ margin:28px 0 0; font-size:15px; color:var(--muted); font-style:italic; }
+.sub-head{ display:flex; justify-content:space-between; align-items:baseline; gap:24px; margin-bottom:24px; flex-wrap:wrap; }
+.sub-head h3{ font-size:34px; }
+
+/* about */
+.about{ background:var(--cream); }
+.about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.about-photo{ border:1px solid var(--gold); padding:12px; border-radius:2px; }
+.about-photo img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
+.about h2{ font-size:clamp(38px,5vw,56px); }
+.about p{ margin:0 0 18px; }
+
+/* contact */
+.contact{ background:var(--blush); }
+.contact-grid{ display:grid; grid-template-columns:1fr 1.3fr; gap:64px; align-items:start; }
+.contact h2{ font-size:clamp(38px,5vw,56px); }
+.contact .direct{ margin-top:28px; font-size:16px; }
+.contact .direct a{ font-weight:400; }
+.form-card{ background:var(--cream); padding:28px 32px 12px; border-radius:2px; border:1px solid var(--rule-strong); }
+
+/* footer */
+footer{ background:var(--plum-deep); color:var(--on-deep-soft); padding:56px 0 40px; font-size:15px; }
+.foot{ display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap; }
+.foot .brand{ color:var(--on-deep); }
+.foot .brand .amp{ color:var(--gold); }
+.foot a{ color:var(--on-deep); }
+.foot-bottom{ border-top:1px solid rgba(232,201,194,.2); margin-top:32px; padding-top:20px; font-size:13px; letter-spacing:1px; }
+
+/* phone and tablet */
+@media (max-width:900px){
+  section{ padding:72px 0; }
+  .hero{ padding:56px 0 72px; }
+  .hero-grid,.about-grid,.contact-grid{ grid-template-columns:1fr; gap:48px; }
+  .hero-art{ max-width:300px; margin:0 auto; width:100%; }
+  .hero-tag{ left:0; }
+  .band-grid,.steps,.slides{ grid-template-columns:1fr; }
+  .svc-grid{ grid-template-columns:1fr; }
+  .dash{ grid-template-columns:1fr; }
+  .dash figure:last-child{ max-width:260px; }
+  .nav-links a:not(.btn){ display:none; }
+}
+@media (max-width:520px){
+  body{ font-size:17px; }
+  .wrap{ padding:0 16px; }
+  .brand{ font-size:21px; } .brand img{ width:40px; height:40px; }
+  .nav-links .btn{ padding:10px 14px; letter-spacing:2px; font-size:12px; }
+  .svc{ padding:30px 24px; }
+  .form-card{ padding:20px 18px 6px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Hearth & Hustle home">
+      <img src="images/hh-crest-light.png" alt="" onerror="this.remove()">
+      <span>Hearth <span class="amp">&amp;</span> Hustle</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#samples">Samples</a>
+      <a href="#about">About</a>
+      <a class="btn" href="#contact">Let's talk</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Simple technology &amp; AI tools for home and business</p>
+        <h1>Get your time back for <em>what matters most.</em></h1>
+        <hr class="rule">
+        <p class="lead">I help busy families, small businesses, and teams find the time sucks hiding in their week, then set up simple, powerful tools and teach you to use them with confidence.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Let's talk</a>
+          <a class="btn ghost" href="#services">See how I help</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="frame"><div class="frame-inner">
+          <img src="images/hh-crest-dark.png" alt="Hearth & Hustle crest" onerror="this.outerHTML='<span class=&quot;fallback&quot;>H<em>&amp;</em>H</span>'">
+        </div></div>
+        <div class="hero-tag"><b>Hearth &amp; Hustle</b>Hearth for your home. Hustle for your work. Simple systems for both.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap band-grid">
+      <div><h3>Simple, <em>not</em> fancy</h3><p>Tools you'll actually keep using, explained in plain English.</p></div>
+      <div><h3>Built around <em>your</em> life</h3><p>Every plan fits your business, your needs, and your lifestyle.</p></div>
+      <div><h3>Taught with <em>confidence</em></h3><p>Years of training adults means you won't be left guessing.</p></div>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How I can help</p>
+        <h2>Ways to <em>work together</em></h2>
+        <p>Start with a one-on-one consultation, bring me in to teach your group, or learn online when the workshops open.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc feature">
+          <span class="n">01</span>
+          <h3>Personalized consultation</h3>
+          <p>We sit down together and find your pain points and time sucks: the repeat questions, the scheduling back-and-forth, the paperwork, the household juggling. Then I build you a customized plan based on your company, your needs, and your lifestyle, with the simple tools that will give you the most time back.</p>
+          <a class="btn" href="#contact">Book a consultation</a>
+        </div>
+        <div class="svc">
+          <span class="n">02</span>
+          <h3>In-person workshops</h3>
+          <p>Hands-on sessions where you learn simple technology and AI tools step by step, with real examples from home and business. You leave knowing how to use them, not just that they exist.</p>
+        </div>
+        <div class="svc">
+          <span class="n">03</span>
+          <h3>Team training</h3>
+          <p>Training for your staff or department so everyone uses the same tools the same way. Clear, practical, and built around how your team actually works.</p>
+        </div>
+        <div class="svc">
+          <span class="n">04</span>
+          <div class="svc-head"><h3>Online workshops</h3><span class="badge">Coming soon</span></div>
+          <p>Learn at your own pace from anywhere. Join the waitlist to hear first when they open.</p>
+          <div class="waitlist">
+            <iframe data-tally-src="https://tally.so/embed/Nq5g6W?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="260" frameborder="0" marginheight="0" marginwidth="0" title="Online workshops waitlist"></iframe>
+            <p class="small">No spam. Just a note when online workshops are ready.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Three steps to a <em>lighter week</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="sn">1</div><div class="srule"></div><h3>We talk</h3><p>You tell me what your days look like and where the time goes. No tech knowledge needed.</p></div>
+        <div class="step"><div class="sn">2</div><div class="srule"></div><h3>I build your plan</h3><p>A custom plan with the quick wins first: which tools to use, what they cost, and how much time they save.</p></div>
+        <div class="step"><div class="sn">3</div><div class="srule"></div><h3>You learn it</h3><p>I set things up with you and teach you to run them yourself, so the time savings last.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="samples" id="samples">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">See what you'd get</p>
+        <h2>Real tools, <em>beautifully simple</em></h2>
+        <p>Every consultation ends with an AI Tools Assessment: a clear, visual plan made just for you. Here are a few pages from a sample.</p>
+      </div>
+      <div class="slides">
+        <figure><div class="shot"><img src="images/sample-slide-quick-wins.jpg" alt="Sample assessment page: six quick wins, each pairing a time-wasting task with a simple fix" loading="lazy"></div><figcaption>Your quick wins</figcaption></figure>
+        <figure><div class="shot"><img src="images/sample-slide-tool-stack.jpg" alt="Sample assessment page: recommended tools with cost, setup time, and time saved" loading="lazy"></div><figcaption>Your tool stack</figcaption></figure>
+        <figure><div class="shot"><img src="images/sample-slide-financial-impact.jpg" alt="Sample assessment page: monthly return, weekly time returned, and total tool cost" loading="lazy"></div><figcaption>Your time and money back</figcaption></figure>
+      </div>
+      <div class="sub-head">
+        <h3>A dashboard for <em>your</em> week</h3>
+        <p class="eyebrow" style="margin:0">Works on laptop and phone</p>
+      </div>
+      <div class="dash">
+        <figure><div class="shot"><img src="images/sample-dashboard.jpg" alt="Sample dashboard on a laptop showing the week at a glance" loading="lazy"></div></figure>
+        <figure><div class="shot"><img src="images/sample-dashboard-phone.jpg" alt="The same sample dashboard on a phone" loading="lazy"></div></figure>
+      </div>
+      <p class="sample-note">Samples use made-up businesses and data.</p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo"><img src="images/erika-family.jpg" alt="Erika with her husband and their two young sons" loading="lazy"></div>
+      <div>
+        <p class="eyebrow">About me</p>
+        <h2>Hi, I'm <em>Erika.</em></h2>
+        <hr class="rule">
+        <p>For five years I trained crews in commercial and corporate aviation, an industry where everything runs on clear systems, checklists, and calm under pressure. Today I bring that same approach to everyday life and work.</p>
+        <p>I build simple but powerful tools for corporate aviation, small businesses, and busy individuals, and I teach people how to use them with confidence.</p>
+        <p>As a working mom, I know your time is precious. My goal is to give you more of it back.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Let's talk</p>
+        <h2>Tell me what's <em>eating your time.</em></h2>
+        <hr class="rule">
+        <p>Send a quick note about your business or household and what you'd like help with. I'll get back to you personally.</p>
+        <p class="direct">Prefer email? <a href="mailto:erika@thehearthandhustle.com">erika@thehearthandhustle.com</a></p>
+      </div>
+      <div class="form-card">
+        <iframe data-tally-src="https://tally.so/embed/xVxopJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="620" frameborder="0" marginheight="0" marginwidth="0" title="Contact Hearth & Hustle"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top">
+        <img src="images/hh-crest-dark.png" alt="" onerror="this.remove()">
+        <span>Hearth <span class="amp">&amp;</span> Hustle</span>
+      </a>
+      <div>Simple technology &amp; AI tools for home and business<br><a href="mailto:erika@thehearthandhustle.com">erika@thehearthandhustle.com</a></div>
+    </div>
+    <div class="foot-bottom">&copy; <span id="yr">2026</span> Hearth &amp; Hustle. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script async src="https://tally.so/widgets/embed.js" onload="Tally.loadEmbeds()"></script>
+</body>
+</html>
