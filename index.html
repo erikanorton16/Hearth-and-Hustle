@@ -64,15 +64,15 @@ header{ position:sticky; top:0; z-index:10; background:rgba(251,246,243,.94); ba
 .hero h1{ font-size:clamp(44px,7vw,84px); letter-spacing:-.5px; }
 .hero .lead{ font-size:20px; max-width:560px; margin:0 0 34px; }
 .hero .actions{ display:flex; flex-wrap:wrap; gap:14px; }
-.hero-art{ position:relative; }
-.hero-art .frame{ border:1px solid var(--gold); border-radius:220px 220px 6px 6px; padding:14px; }
-.hero-art .frame-inner{ border-radius:208px 208px 2px 2px; overflow:hidden; background:var(--plum-deep);
-  aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; }
+.hero-art{ position:relative; max-width:440px; width:100%; justify-self:center; }
+.hero-art .frame{ border:1px solid var(--gold); border-radius:50%; padding:14px; }
+.hero-art .frame-inner{ border-radius:50%; overflow:hidden; background:var(--plum-deep); outline:1px solid var(--gold); outline-offset:-10px;
+  aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; }
 .hero-art .frame-inner img{ width:62%; height:auto; }
 .hero-art .frame-inner .fallback{ font-family:var(--font-display); color:var(--on-deep); font-size:64px; font-weight:500; }
 .hero-art .frame-inner .fallback em{ color:var(--gold); }
-.hero-tag{ position:absolute; left:-24px; bottom:48px; background:var(--cream); border:1px solid var(--rule-strong);
-  padding:16px 22px; max-width:250px; font-size:15px; line-height:1.45; box-shadow:0 10px 30px rgba(74,46,58,.08); }
+.hero-tag{ position:relative; margin:-34px auto 0; text-align:center; background:var(--cream); border:1px solid var(--rule-strong);
+  padding:16px 22px; max-width:270px; font-size:15px; line-height:1.45; box-shadow:0 10px 30px rgba(74,46,58,.08); }
 .hero-tag b{ display:block; font-family:var(--font-display); font-style:italic; font-weight:600; font-size:22px; color:var(--accent); }
 
 /* pillars band */
@@ -148,7 +148,6 @@ footer{ background:var(--plum-deep); color:var(--on-deep-soft); padding:56px 0 4
   .hero{ padding:56px 0 72px; }
   .hero-grid,.about-grid,.contact-grid{ grid-template-columns:1fr; gap:48px; }
   .hero-art{ max-width:300px; margin:0 auto; width:100%; }
-  .hero-tag{ left:0; }
   .band-grid,.steps,.slides{ grid-template-columns:1fr; }
   .svc-grid{ grid-template-columns:1fr; }
   .dash{ grid-template-columns:1fr; }
