@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshops | Hearth &amp; Hustle</title>
+<meta name="description" content="Upcoming Hearth &amp; Hustle workshops, with links to add each one to your calendar.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../images/hh-crest-light.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Same brand tokens as the home page. */
+:root{
+  --cream:#FBF6F3; --blush:#F4E7E3; --ink:#3A2A30; --ink-2:#5A4249; --muted:#7A5E66;
+  --rule:#E7D8D2; --accent:#8E4A5A; --plum-deep:#4A2E3A; --on-deep:#F6ECE8; --on-deep-soft:#E8C9C2; --gold:#B89B6E;
+  --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'Jost', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--cream); color:var(--ink-2); font-family:var(--font-body);
+  font-weight:300; font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+a{ color:var(--accent); }
+.wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+h1,h2{ font-family:var(--font-display); font-weight:500; color:var(--ink); margin:0; line-height:1.1; }
+h1 em{ font-style:italic; color:var(--accent); }
+.eyebrow{ font-size:13px; font-weight:400; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+.rule{ width:72px; height:1px; background:var(--gold); margin:26px 0; border:0; }
+.btn{ display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:400;
+  font-size:14px; letter-spacing:3px; text-transform:uppercase; padding:16px 26px; border-radius:2px; }
+.btn:hover{ background:var(--plum-deep); }
+.btn.ghost{ background:transparent; color:var(--ink); border:1px solid var(--gold); }
+.btn.ghost:hover{ background:var(--blush); }
+header{ border-bottom:1px solid var(--rule); }
+.brand{ display:flex; align-items:center; gap:12px; height:76px; text-decoration:none; color:var(--ink);
+  font-family:var(--font-display); font-weight:600; font-size:26px; }
+.brand img{ width:48px; height:48px; }
+.brand .amp{ font-style:italic; color:var(--accent); }
+main.wrap{ padding:72px 24px 96px; }
+h1{ font-size:clamp(40px,6vw,58px); }
+.event{ margin-top:48px; padding:32px; background:#fff; border:1px solid var(--rule); border-radius:2px; }
+.event h2{ font-size:32px; }
+.when{ margin:12px 0 4px; font-weight:400; color:var(--ink); }
+.actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+footer{ background:var(--plum-deep); color:var(--on-deep-soft); padding:32px 0; font-size:14px; }
+footer a{ color:var(--on-deep); }
+@media (max-width:600px){ .event{ padding:24px 20px; } .event h2{ font-size:28px; } footer{ overflow-wrap:anywhere; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="../">
+      <img src="../images/hh-crest-light.png" alt="" onerror="this.remove()">
+      <span>Hearth <span class="amp">&amp;</span> Hustle</span>
+    </a>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow">Workshops</p>
+  <h1>Save the <em>date</em></h1>
+  <hr class="rule">
+  <p>Add your workshop to your calendar so you get a reminder the day before and two hours before.</p>
+
+  <article class="event" id="2026-11-07">
+    <h2>Getting More Out of Claude &amp; ChatGPT</h2>
+    <p class="when">Saturday, November 7, 2026 &middot; 3:30&ndash;5:00 PM</p>
+    <p>Nicholas P. Sims Library, 515 W Main St, Waxahachie, TX<br>
+    Bring a charged laptop or iPad and your ChatGPT or Claude login. Parking is in the lot right outside the library.</p>
+    <div class="actions">
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Getting%20More%20Out%20of%20Claude%20%26%20ChatGPT&amp;dates=20261107T213000Z/20261107T230000Z&amp;details=Free%2C%20hands-on%20Hearth%20%26%20Hustle%20workshop.%20Bring%20a%20charged%20laptop%20or%20iPad%20and%20your%20ChatGPT%20or%20Claude%20login.%20Parking%20is%20in%20the%20lot%20right%20outside%20the%20library.&amp;location=Nicholas%20P.%20Sims%20Library%2C%20515%20W%20Main%20St%2C%20Waxahachie%2C%20TX&amp;ctz=America/Chicago" target="_blank" rel="noopener">Add to Google Calendar</a>
+      <a class="btn ghost" href="2026-11-07-claude-chatgpt.ics">Apple or Outlook</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">Questions? Email <a href="mailto:erika@thehearthandhustle.com">erika@thehearthandhustle.com</a></div>
+</footer>
+</body>
+</html>
