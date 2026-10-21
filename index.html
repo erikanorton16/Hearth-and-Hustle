@@ -46,6 +46,13 @@ section{ padding:96px 0; }
 .section-head h2{ font-size:clamp(36px,5vw,54px); }
 .section-head p{ margin:18px 0 0; }
 
+/* announcement bar: the next workshop, shown on every screen size */
+.announce{ background:var(--plum-deep); color:var(--on-deep); font-size:14px; letter-spacing:1px; text-align:center; }
+.announce a{ display:block; padding:10px 16px; color:var(--on-deep); text-decoration:none; }
+.announce b{ font-weight:500; }
+.announce .go{ color:var(--on-deep-soft); text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
+.announce a:hover .go{ color:#fff; }
+
 /* header */
 header{ position:sticky; top:0; z-index:10; background:rgba(251,246,243,.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
 .nav{ display:flex; align-items:center; justify-content:space-between; height:76px; }
@@ -166,6 +173,10 @@ footer{ background:var(--plum-deep); color:var(--on-deep-soft); padding:56px 0 4
 </head>
 <body>
 
+<div class="announce">
+  <a href="events/"><b>Free workshop &middot; Sat, Nov 7 in Waxahachie:</b> Getting More Out of Claude &amp; ChatGPT. <span class="go">Details &amp; registration</span></a>
+</div>
+
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Hearth & Hustle home">
@@ -176,6 +187,7 @@ footer{ background:var(--plum-deep); color:var(--on-deep-soft); padding:56px 0 4
       <a href="#services">Services</a>
       <a href="#samples">Samples</a>
       <a href="#about">About</a>
+      <a href="events/">Workshops</a>
       <a class="btn" href="#contact">Let's talk</a>
     </nav>
   </div>
