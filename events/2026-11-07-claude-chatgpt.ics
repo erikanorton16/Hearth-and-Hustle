@@ -5,14 +5,17 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:2026-11-07-claude-chatgpt@thehearthandhustle.com
-DTSTAMP:20261021T220000Z
+DTSTAMP:20261022T194000Z
+SEQUENCE:1
 DTSTART:20261107T213000Z
 DTEND:20261107T230000Z
 SUMMARY:Getting More Out of Claude & ChatGPT
 LOCATION:Nicholas P. Sims Library\, 515 W Main St\, Waxahachie\, TX
-DESCRIPTION:Free\, hands-on Hearth & Hustle workshop. Bring a charged lapt
- op or iPad and your ChatGPT or Claude login. Parking is in the lot right 
- outside the library.
+DESCRIPTION:Free\, hands-on Hearth & Hustle workshop.\n\nBring:\n- a charge
+ d laptop or iPad\n- your ChatGPT or Claude login\n- your completed homewor
+ k PDF\n\nHomework (about 15 minutes\, do it before Saturday): https://theh
+ earthandhustle.com/events/2026-11-07-claude-chatgpt-homework.pdf\n\nParkin
+ g is in the lot right outside the library.
 URL:https://thehearthandhustle.com/events/
 BEGIN:VALARM
 ACTION:DISPLAY
